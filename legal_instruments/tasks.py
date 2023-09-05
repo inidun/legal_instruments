@@ -46,7 +46,7 @@ def extract_text(items):
 
 def progress(items):
     for (item, text) in items:
-        print("downloaded: {}, {} bytes".format(item.filename, len(text)))
+        print(f"downloaded: {item.filename}, {len(text)} bytes")
         yield (item, text)
 
 def store_text(data, filename):
