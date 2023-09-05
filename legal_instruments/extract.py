@@ -64,5 +64,5 @@ def create_item(item_type, href, sign_date, city, title):
         date=sign_date,
         city=city,
         title=title,
-        filename="{0}_{1:04d}_{2:06d}_{3}{4}.txt".format(item_type, section_id, unesco_id, sign_date.year, _city),
+        filename=f"{item_type}_{section_id:04d}_{unesco_id:06d}_{sign_date.year}{_city}.txt",
     )
