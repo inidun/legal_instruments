@@ -10,7 +10,7 @@ def _scrape(url, item_type):
         url = f"http://portal.unesco.org/en/{url}"
 
 
-    response = requests.get(url)
+    response = requests.get(url, timeout=30)
 
     if response.status_code != 200:
         raise Exception(f"error: {url} {response.status_code}") # pylint: disable=broad-exception-raised
