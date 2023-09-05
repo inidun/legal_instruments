@@ -1,10 +1,11 @@
 # pylint: disable=wrong-import-position
+# mypy: disable-error-code="attr-defined"
 import os
 import sys
 from datetime import date
 
 
-def project_root():
+def project_root() -> str:
     folder = os.getcwd()
     while os.path.split(folder)[1] not in ('', 'unesco_data_collection'):
         folder, _ = os.path.split(folder)
@@ -18,7 +19,7 @@ import legal_instruments.tasks as task  # isort: skip
 from legal_instruments import extract  # isort: skip
 
 
-def collect_legal_instruments():
+def collect_legal_instruments() -> None:
     corpus_filename = os.path.join(project_root(), "data", "legal_instrument_corpus.txt.zip")
     index_filename = os.path.join(project_root(), "data", "legal_instrument_index.csv")
 
