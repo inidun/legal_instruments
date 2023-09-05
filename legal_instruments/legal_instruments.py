@@ -1,7 +1,8 @@
 # pylint: disable=wrong-import-position
-import sys
 import os
+import sys
 from datetime import date
+
 
 def project_root():
     folder = os.getcwd()
@@ -11,9 +12,9 @@ def project_root():
 
 sys.path.append(project_root())
 
-from legal_instruments.pipeline import Pipeline
-import legal_instruments.tasks as task
-from legal_instruments import extract
+from legal_instruments.pipeline import Pipeline  # isort: skip
+import legal_instruments.tasks as task  # isort: skip
+from legal_instruments import extract  # isort: skip
 
 def collect_legal_instruments():
 
