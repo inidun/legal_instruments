@@ -13,7 +13,7 @@ def _scrape(url, item_type):
     response = requests.get(url)
 
     if response.status_code != 200:
-        raise Exception("error: {} {}"-format(url, response.status_code))
+        raise Exception(f"error: {url} {response.status_code}")
 
     return (response.content, response.url, item_type)
 
