@@ -7,7 +7,8 @@ import pandas as pd
 def _scrape(url, item_type):
 
     if not url.startswith("http"):
-        url = "http://portal.unesco.org/en/{}".format(url)
+        url = f"http://portal.unesco.org/en/{url}"
+
 
     response = requests.get(url)
 
