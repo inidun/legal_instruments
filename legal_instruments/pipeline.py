@@ -14,5 +14,3 @@ class Pipeline():
             target = task(target)
 
         return target
-
-
