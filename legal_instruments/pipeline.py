@@ -1,6 +1,5 @@
 # type: ignore
-class Pipeline():
-
+class Pipeline:
     def __init__(self, args=None):
         self.tasks = args or []
 
@@ -9,7 +8,6 @@ class Pipeline():
         return self
 
     def apply(self, target):
-
         for task in self.tasks:
             target = task(target)
 
