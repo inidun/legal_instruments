@@ -1,3 +1,4 @@
+# pylint: disable=wrong-import-position
 import sys
 import os
 from datetime import date
