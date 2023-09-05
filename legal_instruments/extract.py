@@ -1,9 +1,10 @@
 # type: ignore
-import bs4
-import re
-import types
 import calendar
 import datetime
+import re
+import types
+
+import bs4
 
 INFO_REGEX = r"(?:(?P<City>.*?(?=,)),\s+)?(?P<Day>\d{1,2})\s+(?P<Month>\w+)\s+(?P<Year>\d{4})"
 LINK_REGEX = r'(?:.*?(?=URL_ID))URL_ID=(?P<unesco_id>\d+)(?:.*?(?=URL_SECTION))URL_SECTION=-?(?P<section_id>\d+).*'

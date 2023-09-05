@@ -1,8 +1,9 @@
 # type: ignore
-import requests
-import legal_instruments.extract as parser
 import zipfile
 import pandas as pd
+import requests
+import legal_instruments.extract as parser
+
 
 def _scrape(url, item_type):
 
