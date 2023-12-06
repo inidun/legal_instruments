@@ -2,20 +2,24 @@ SHELL := /bin/bash
 SOURCE_FOLDERS=legal_instruments tests
 
 
-black:
-	@poetry run black $(SOURCE_FOLDERS)
-.PHONY: black
-
 isort:
 	@poetry run isort $(SOURCE_FOLDERS)
 .PHONY: isort
 
+black:
+	@poetry run black -q $(SOURCE_FOLDERS)
+.PHONY: black
+
+pylint:
+	@poetry run pylint $(SOURCE_FOLDERS)
+.PHONY: pylint
+
 mypy:
-	@poetry run mypy $(SOURCE_FOLDERS)
+	@poetry run mypy --no-error-summary $(SOURCE_FOLDERS)
 .PHONY: mypy
 
-lint:
-	@poetry run pylint $(SOURCE_FOLDERS)
+lint: isort black pylint mypy
+.PHONY: lint
 
 clean:
 	@find . -type d -name '__pycache__' -exec rm -rf {} +
